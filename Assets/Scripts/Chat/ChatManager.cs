@@ -51,7 +51,7 @@ namespace FirebaseTest.Chats {
             var userChatPath = Paths.UserChatPath(userId, newChatID);
             var addUserChat = DatabaseUtils.AddOrOverrideValue(userChatPath, true);
             await UniTask.WhenAll(addChatMember, addUserChat);
-            await CreateChatWindow(newChatID);
+            CreateChatWindow(newChatID);
         }
 
         private async UniTask RestoreChats() {
@@ -61,13 +61,13 @@ namespace FirebaseTest.Chats {
                 return;
             }
             foreach (var userChat in userChats.Children) {
-                await CreateChatWindow(userChat.Key);
+                CreateChatWindow(userChat.Key);
             }
         }
 
-        private async UniTask CreateChatWindow(string chatID) {
+        private void CreateChatWindow(string chatID) {
             var newChatWindow = Instantiate(chatPrefab, spawnOrigin);
-            await newChatWindow.Initialize(chatID);
+            newChatWindow.Initialize(chatID);
             newChatWindow.onLeaveChat += OnLeaveChat;
             _activeChats.Add(newChatWindow);
         }

@@ -14,7 +14,7 @@ namespace FirebaseTest.Friends {
         }
     
         public void RemoveFriend(FriendData friend) {
-            
+            //todo: implement
         }
 
         public void RemoveAllFriends() {

@@ -13,14 +13,11 @@ namespace FirebaseTest.Chats {
         private IChatInput _chatInput;
         private IChatView _chatView;
 
-        public async UniTask Initialize(string chatID) {
+        public void Initialize(string chatID) {
             _chatInput = GetComponent<IChatInput>();
             _chatView = GetComponent<IChatView>();
             ChatId = chatID;
 
-            /*var restoreMembers = RestoreMembers(ChatId);
-            await restoreMembers;*/
-            
             _chatInput.onMessageSendInput += OnMessagePostInput;
             _chatInput.onInviteInput += OnAddUserInput;
             _chatInput.onLeaveChatInput += OnLeaveChatInput;

@@ -67,8 +67,6 @@ namespace FirebaseTest.AppInitialization {
                 emailAuthenticationManager, 
                 addChatInput
             );
-            
-            print(await DatabaseUtils.GetIDByEmail("sss@ddd.com"));
         }
     }
 }
