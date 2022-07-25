@@ -12,15 +12,16 @@ namespace FirebaseTest.Chats {
 
         public void OnUserLogIn() {
             button.interactable = true;
+            print("Log in");
         }
 
         public void OnUserLogOut() {
             button.interactable = false;
+            print("Log out");
         }
 
         private void OnEnable() {
             button.onClick.AddListener(() => onAddChatInput?.Invoke());
-            button.interactable = false;
         }
     }
 }
